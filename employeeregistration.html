@@ -41,10 +41,13 @@
 		var fname= document.getElementById("t1").value;
                 var Last name= document.getElementById("t2").value;
 		var email= document.getElementById("t3").value;
+		var add= document.getElementById("t4").value;
 		var uname= document.getElementById("t4").value;
-		var pwd= document.getElementById("t5").value;			
-		var cpwd= document.getElementById("t6").value;
-	        var birthplace= document.getElementById("t7").value;
+		var pwd= document.getElementById("t6").value;			
+		var cpwd= document.getElementById("t7").value;
+	        var ph= document.getElementById("t8").value;
+		var nationality= document.getElementById("t9").value;
+		var exp= document.getElementById("t0").value;
 	
         //email id expression code
 		var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
@@ -74,6 +77,14 @@
 		else if (!filter.test(email))
 		{
 			alert('Invalid email');
+		}
+		else if(add=='')
+		{
+			alert('Please enter your address');
+		}
+		else if (!filter.test(add))
+		{
+			alert('Invalid ');
 		}
 		else if(uname=='')
 		{
@@ -107,13 +118,29 @@
 		{
 			alert ('Password max length is 12');
 		}
-                else if(birthplace=='')
+                else if(ph=='')
 		{
-			alert('Please enter your birthplace');
+			alert('Please enter your phone number');
 		}
-		else if(!letters.test(birthplace))
+		else if(!letters.test(ph))
 		{
-			alert('Name field required only alphabet characters');
+			alert('Name field required only numbers');
+		}
+		else if(nationality=='')
+		{
+			alert('Please enter your nationality');
+		}
+		else if (!filter.test(nationality))
+		{
+			alert('Invalid ');
+		}
+		else if(exp=='')
+		{
+			alert('Please enter your experience');
+		}
+		else if (!filter.test(exp))
+		{
+			alert('Invalid ');
 		}
 		else
 		{				                            
@@ -129,8 +156,11 @@
 		document.getElementById("t3").value="";
 		document.getElementById("t4").value="";
 		document.getElementById("t5").value="";
-	        document.getElementById("t6").value="";
-                document.getElementById("t7").value="";
+		document.getElementById("t6").value="";
+	        document.getElementById("t7").value="";
+                document.getElementById("t8").value="";
+		document.getElementById("t9").value="";
+		document.getElementById("t0").value="";
         }
     
   </script>
@@ -160,25 +190,40 @@
 	<td align="right">Enter Email ID :</td>
 	<td><input type="text" placeholder="Enter Email ID here" id="t3" class="tb" /></td>
 	</tr>
+	
+	<tr>
+	<td align="right">Enter Address :</td>
+	<td><input type="text" placeholder="Enter Address here" id="t4" class="tb" /></td>
+	</tr>
+	
 	<tr>
 	<td align="right">Enter Username :</td>
-	<td><input type="text" placeholder="Enter Username here" id="t4" class="tb" /></td>
+	<td><input type="text" placeholder="Enter Username here" id="t5" class="tb" /></td>
 	</tr>
 	<tr>
 	<td align="right">Enter Password :</td>
-	<td><input type="password" placeholder="Enter Password here" id="t5" class="tb" /></td>
+	<td><input type="password" placeholder="Enter Password here" id="t6" class="tb" /></td>
 	</tr>
 	<tr>
 	<td align="right">Enter Confirm Password :</td>
-	<td><input type="password" placeholder="Enter Password here" id="t6" class="tb" /></td>
+	<td><input type="password" placeholder="Enter Password here" id="t7" class="tb" /></td>
 	</tr>
 
         <tr>
-	<td align="right">Enter your birthplace:</td>
-	<td><input type="text" placeholder="Enter birth place here" id="t7" class="tb" /></td>
+	<td align="right">Enter your phone number:</td>
+	<td><input type="number" placeholder="Enter phone number here" id="t8" class="tb" /></td>
 	</tr>
 
+	<tr>
+	<td align="right">Enter your nationality:</td>
+	<td><input type="text" placeholder="Enter nationality here" id="t9" class="tb" /></td>
+	</tr>
 
+	<tr>
+	<td align="right">Enter your experience:</td>
+	<td><input type="number" placeholder="Enter experience here" id="t0" class="tb" /></td>
+	</tr>
+	
 	<tr>
 	<td></td>
 	<td>
